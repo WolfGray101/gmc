@@ -301,3 +301,7 @@ width: 0;
 .after-register {
 width: 50%;
 }
+
+.online {
+  border: none;
+}
