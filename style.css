@@ -96,6 +96,7 @@ a {
 .description {
   font-weight: 500;
   font-size: 1.25vw;
+  line-height: 120%;
 }
 .start-screen__btn {
   font-size: 1vw;
@@ -380,4 +381,17 @@ input {
 }
 .footer-img {
   width: 25%;
+}
+.trainers {
+  align-items: flex-start;
+}
+.thoughts-hight__questions-description {
+  border: 1px solid black;
+  border-radius: 3vw;
+  padding: 1vw 2vw;
+}
+.thoughts-hight__questions-description--after {
+  width: 2vw;
+  height: 2vw;
+  border: 1px solid black;
 }
