@@ -307,3 +307,15 @@ width: 50%;
 .online {
   border: none;
 }
+.trainer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  align-items: center;
+  justify-content: space-around;
+}
+.trainer img{
+  border-radius: 1vw;
+  height: 25vw;
+}
