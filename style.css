@@ -151,6 +151,7 @@ a {
 }
 .thoughts-hight__questions-description {
   font-size: 1.5vw;
+  color: #cf1469;
 }
 .thoughts-low {
   padding: 0.75vw 0 0.75vw 5vw;
@@ -319,6 +320,7 @@ width: 50%;
 .trainer img{
   border-radius: 1vw;
   height: 25vw;
+  width: 100%;
 }
 
 .fb-form {
