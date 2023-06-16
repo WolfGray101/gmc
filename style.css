@@ -397,3 +397,7 @@ input {
   height: 2vw;
   border: 1px solid black;
 }
+.after-register-btn {
+  padding: 1vw 2vw;
+  width: 60%;
+}
