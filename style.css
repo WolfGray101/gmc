@@ -319,3 +319,65 @@ width: 50%;
   border-radius: 1vw;
   height: 25vw;
 }
+
+.fb-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  align-items: center;
+  width: 50%;
+}
+.fb-submit {
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: .75vw 2vw;
+  margin-top: 2vw;
+}
+label {
+  width: 100%;
+  position: relative;
+}
+.form-title {
+  font-size: 2vw;
+  font-weight: 600;
+  margin-bottom: 1.5vw;
+}
+input {
+  border: none;
+  box-shadow:0 0 10px 2px #f8b9d8;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.75vw 0;
+}
+::placeholder {
+  padding: .75vw 2vw;
+  height: 2vw;
+}
+.sendInfo {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 500;
+}
+.success {
+  background-color: green;
+}
+.error {
+  background-color: red;
+}
+.loading {
+  background-color: #f7bd32;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.footer-img {
+  width: 25%;
+}

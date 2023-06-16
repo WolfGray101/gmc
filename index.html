@@ -379,31 +379,99 @@
     </section>
 
     <section class="whom whom__work">
-      <h2 class="header-h1">тут будет футер с формой
-      </h2>
-      <!-- <div class="whom-wrapper whom-wrapper__work">
-        <div class="whom-item online">
-          <p class="whom-item__number">1</p>
-          <p class="description">
-            Заполните нашу форму.
- </p>
-        </div>
-        <div class="whom-item online">
-          <p class="whom-item__number">2</p>
-          <p class="description">
-            После отправки формы вы получите доступ к нашему закрытому телеграмм - каналу. </p>
-        </div>
-        <div class="whom-item online">
-          <p class="whom-item__number">3</p>
-          <p class="description">
-            Следите за анонсами проведений тренировок в телеграм.
+      <div class="footer">
+        <img src="./src/emojipng.com-1895974.png" alt="" class="footer-img">
+        <form id="fb-form" class="rd-mailform fb-form">
+          <!-- method="post" action="send.php"> -->
+          <p class="form-title">Закажите звонок</p>
+          <!-- <div class="form-group"> -->
+          <label>
+            <input
+              placeholder="Ваше имя"
+              type="text"
+              name="email"
+              data-constraints="@NotEmpty @LettersOnly"
+            />
+          </label>
+          <p></p>
+  
+          <label>
+            <input
+              type="text"
+              name="message"
+              placeholder="Номер телефона"
+              data-constraints="@NotEmpty @NumbersOnly"
+            />
+          </label>
+  
+          <button class="fb-submit btn work__btn" type="submit">Заказать</button>
+          <!-- <div class="mfInfo" style="margin-bottom: 20%"></div> -->
+        </form>
+      </div>
+     
 
-          </p>
-        </div>
- 
-       
-      </div> -->
-      <button class="btn work__btn">Присоедениться к тренировкам >></button>
-    </section>
+      <script>
+        const applicantForm = document.getElementById("fb-form");
+
+        let className = "loading";
+        let title = "Отправляем форму";
+
+        const fnConstructor = (status) => {
+          switch (status) {
+            case "success":
+              className = "success";
+              title =
+                "Заявка отправлена. Мы проконсультируем вас в ближайшее время";
+              document.querySelector(".sendInfo").remove();
+
+              break;
+
+            case "error":
+              className = "error";
+              title = "ошибка отправки";
+              document.querySelector(".sendInfo").remove();
+              break;
+
+            case "loading":
+              className;
+              title;
+              break;
+
+            default:
+              return;
+              break;
+          }
+
+          const formSendInfo = document.createElement("div");
+          formSendInfo.classList.add("sendInfo");
+          formSendInfo.classList.add(className);
+          const formSendTitle = document.createElement("p");
+          formSendTitle.textContent = title;
+          formSendInfo.append(formSendTitle);
+          document.body.append(formSendInfo);
+
+          if (status !== "loading") {
+            setTimeout(() => {
+              formSendInfo.remove();
+            }, 3000);
+          }
+        };
+
+        applicantForm.onsubmit = async (e) => {
+          e.preventDefault();
+          fnConstructor("loading");
+          try {
+            const res = await fetch("send.php", {
+              method: "POST",
+              body: new FormData(applicantForm),
+            });
+            if (!res.ok) fnConstructor("error");
+            fnConstructor("success");
+          } catch (e) {
+            fnConstructor("error");
+          }
+        };
+      </script>
+       </section>
   </body>
 </html>
