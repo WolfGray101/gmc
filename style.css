@@ -113,7 +113,7 @@ a {
 }
 .start-screen__btn:hover {
   padding: 1vw 3vw;
-  width: 60%;
+  /* width: 60%; */
   box-shadow: none;
 
   /* background-color: rgba(77, 76, 75, 0.1); */
