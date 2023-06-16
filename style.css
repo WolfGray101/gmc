@@ -320,7 +320,7 @@ width: 50%;
 .trainer img{
   border-radius: 1vw;
   height: 25vw;
-  width: 100%;
+  width: auto;
 }
 
 .fb-form {
@@ -398,6 +398,10 @@ input {
   border: 1px solid black;
 }
 .after-register-btn {
+  padding: 1vw 2vw;
+  width: 60%;
+}
+.after-register-btn:hover{
   padding: 1vw 2vw;
   width: 60%;
 }
