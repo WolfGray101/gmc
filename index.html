@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -177,7 +181,7 @@
           <p class="description">Вернёте красивую осанку.</p>
         </div>
 
-        <img src="./src/health.png" alt="" class="health-image" />
+        <img src="./src/face_icon.png" alt="" class="health-image" />
       </div>
     </section>
     <section class="whom whom__work">
@@ -239,12 +243,12 @@
           Также на тренировке вы узнаете, как лучше всего восстанавливаться
           после родов и сможете получить полноценную консультацию от тренера.
         </p>
-        <button class="btn start-screen__btn after-register-btn">
+        <button class="btn">
           Присоедениться к тренировкам
         </button>
       </div>
       <div class="start-screen__image-container after-register">
-        <img src="./src/afterregister.png" alt="" />
+        <img src="./src/afterregister2.png" alt="" />
       </div>
     </section>
     <section class="whom whom__work">
@@ -282,7 +286,7 @@
           <h2 class="header-h2">
             Кристина
           </h2>
-          <p class="description">
+          <p class="description description--trainer">
             Фитнес-бикини, тренировочный стаж 5 лет. Опыт в тренерстве более 2 лет. Справится даже с самыми сложными задачами.
 
           </p>
@@ -292,7 +296,7 @@
           <h2 class="header-h2">
             Екатерина
           </h2>
-          <p class="description">
+          <p class="description description--trainer">
             Молодая мамочка, фитнес-тренер, которая сама прошла через послеродовое восстановление и знакома с проблемами , которые беспокоят девочек после родов. Знает тонкости послеродового восстановления.
 
           </p>
@@ -302,12 +306,14 @@
     </div>
      
     </section>
-    <section class="questions">
+    <section class="questions-wrapper">
+    <div class="questions swiper">
       <h2 class="header-h1 questions__header">
         Ответы на самые частые вопросы
       </h2>
-      <div class="questions-wrapper">
-        <div class="question-item">
+      <div class="questions-wrapper swiper-wrapper">
+        <div class="question-item swiper-slide">
+          <img src="./src/1.png" alt="" class="question-icon">
           <h3>ЧЕРЕЗ КАКОЕ ВРЕМЯ ПОСЛЕ РОДОВ МОЖНО НАЧАТЬ ТРЕНИРОВКИ?</h3>
           <p class="description">
             Если у тебя были естественные роды и на данный момент нет
@@ -316,18 +322,22 @@
             необходимо проконсультироваться с врачом.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/2.png" alt="" class="question-icon">
+
           <h3>У МЕНЯ БЫЛО КЕСАРЕВО СЕЧЕНИЕ, МНЕ МОЖНО ТРЕНИРОВАТЬСЯ?</h3>
           <p class="description">
             Да, но не ранее чем через 6 месяцев после родов и по согласованию с
             врачом.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/3.png" alt="" class="question-icon">
           <h3>БУДУТ ЛИ ТРЕНИРОВКИ ВМЕСТЕ С РЕБЁНКОМ?</h3>
           <p class="description">Да, например с коляской.</p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/4.png" alt="" class="question-icon">
           <h3>
             УБЕРЁТСЯ ЛИ ПОСТРОДОВОЙ ЖИВОТ С ТРЕНИРОВКАМИ НА ЭТОЙ ПРОГРАММЕ?
           </h3>
@@ -336,7 +346,8 @@
             тренировочного режима.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/5.png" alt="" class="question-icon">
           <h3>
             Я НАХОЖУСЬ С РЕБЁНКОМ ОДНА, КАК У МЕНЯ ПОЛУЧИТСЯ УДЕЛЯТЬ ВРЕМЯ
             ПРОГРАММЕ?
@@ -346,13 +357,15 @@
             заниматься , например, пока малыш спит.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/6.png" alt="" class="question-icon">
           <h3>НУЖНО ЛИ КАКОЕ-ТО ОБОРУДОВАНИЕ ДЛЯ ТРЕНИРОВОК?</h3>
           <p class="description">
             Для тренировок тебе потребуется интернет, коврик, удобная форма.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/7.png" alt="" class="question-icon">
           <h3>
             ЧТО ДЕЛАТЬ, ЕСЛИ Я НЕ УСПЕЛА ЗАКОНЧИТЬ ТРЕНИРОВКУ (НАПРИМЕР, РЕБЁНОК
             ПРОСНУЛСЯ)? НАЧИНАТЬ СНАЧАЛА ИЛИ ПРОДОЛЖАТЬ С МЕСТА, ГДЕ
@@ -365,7 +378,8 @@
             снова хорошенько разогреться и сделать разминку.
           </p>
         </div>
-        <div class="question-item">
+        <div class="question-item swiper-slide">
+          <img src="./src/8.png" alt="" class="question-icon">
           <h3>КАК ПРОХОДЯТ ЗАНЯТИЯ?</h3>
           <p class="description">
             В нашем закрытом телеграмм - канале, доступ к которому можно
@@ -375,9 +389,36 @@
             телефон, ноутбук, телевизор.
           </p>
         </div>
+        <div class="question-item swiper-slide">
+          <img src="./src/9.png" alt="" class="question-icon">
+          <h3>Я СТАЛА МАМОЙ БОЛЬШЕ ГОДА НАЗАД. БУДУТ ЛИ ТРЕНИРОВКИ ПОЛЕЗНЫ ДЛЯ МЕНЯ?
+          </h3>
+          <p class="description">
+            Да, конечно, вы сможете: <br>
+            - похудеть<br>
+            - улучшить тонус мышц<br>
+            - укрепить мышечный корсет<br>
+            - тренироваться в комфортном режиме.<br>
+            
+          </p>
+        </div>
+        <div class="question-item swiper-slide">
+          <img src="./src/10.png" alt="" class="question-icon">
+          <h3> У МЕНЯ ВОЗНИКЛИ ДОПОЛНИТЕЛЬНЫЕ ВОПРОСЫ, КУДА ПИСАТЬ?
+          </h3>
+          <p class="description">
+            По всем вопросам можно писать на данный адрес: <a href="mailto:simakovapolina96@gmail.com" class="question-item__email">simakovapolina96@gmail.com</a>.
+          </p>
+        </div>
       </div>
-    </section>
-
+      
+    </div>
+    <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+  </section>
+    
     <!-- <section class="whom whom__work">
       <div class="footer">
         <img src="./src/emojipng.com-1895974.png" alt="" class="footer-img">
@@ -470,5 +511,34 @@
         };
       </script>
        </section> -->
+       
+       <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+       <script>
+        const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+   //показываем кусочек следующего слайда
+   slidesPerView: 3,
+  //отступ слайдеров
+  spaceBetween: 5,
+});
+       </script>
   </body>
 </html>

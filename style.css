@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @font-face {
   font-family: "Bebas-font";
   font-style: normal;
   font-weight: 400;
   src: url(./fonts/BebasNeue-Regular.643f4552940567b18052.woff) format("woff"),
-  url(./fonts/BebasNeue-Regular.643f4552940567b18052.woff2) format("woff2"),
-  url(./fonts/BebasNeue-Regular.643f4552940567b18052.eot) format("eot")
+    url(./fonts/BebasNeue-Regular.643f4552940567b18052.woff2) format("woff2"),
+    url(./fonts/BebasNeue-Regular.643f4552940567b18052.eot) format("eot");
 }
 
 @font-face {
@@ -16,18 +17,21 @@
   font-style: normal;
   font-weight: 700;
   src: url(./fonts/BebasNeue-Bold.6f62bf0730d88b3a2f42.woff) format("woff"),
-  url(./fonts/BebasNeue-Bold.6f62bf0730d88b3a2f42.woff2) format("woff2"),
-  url(./fonts/BebasNeue-Bold.6f62bf0730d88b3a2f42.eot) format("eot")
+    url(./fonts/BebasNeue-Bold.6f62bf0730d88b3a2f42.woff2) format("woff2"),
+    url(./fonts/BebasNeue-Bold.6f62bf0730d88b3a2f42.eot) format("eot");
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Bebas-font", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Bebas-font", sans-serif; */
   /* font-family: "Inter", sans-serif; */
 }
 body {
   padding: 0 15vw;
+  z-index: 0;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -44,13 +48,26 @@ a {
 .btn {
   background: none;
   border: none;
-  font-size: 1.5vw;
+  font-size: 1.25vw;
   font-weight: 500;
+  box-shadow: 0 12px 22px 0 #ee477780;
+  border-bottom: 4px solid #cf1469;
+  background: linear-gradient(90deg, #ff5ba9, #e91776 99.93%);
+  color: white;
+  padding: 1.5vw 3vw;
+  border-radius: 0.75vw;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  transition-duration: 0.3s;
+  box-shadow: none;
 }
 .header-h2 {
   font-size: 3vw;
   font-weight: 400;
   text-align: center;
+  font-family: "Bebas-font", sans-serif;
 }
 .header {
   display: flex;
@@ -71,13 +88,14 @@ a {
   box-shadow: 0 12px 22px 0 #ee477780;
   border-bottom: 4px solid #cf1469;
   background: linear-gradient(90deg, #ff5ba9, #e91776 99.93%);
+  cursor: pointer;
+  transition-duration: 0.3s;
 }
 .navLink-wrapper:hover {
   box-shadow: none;
   border-bottom: 4px solid #cf1469;
+  transition-duration: 0.3s;
   background: linear-gradient(90deg, #ff5ba9, #e91776 99.93%);
-
-  /* background-color: rgb(247, 47, 47); */
 }
 .navLink-wrapper:hover a {
   color: rgb(245, 240, 240);
@@ -94,8 +112,6 @@ a {
   align-items: center;
   gap: 4vw;
 }
-.start-screen__image-container {
-}
 .start-screen__image-container img {
   width: 100%;
   border-top-left-radius: 2vw;
@@ -110,6 +126,7 @@ a {
 .header-h1 {
   font-size: 2vw;
   font-weight: 600;
+  font-family: "Bebas-font", sans-serif;
 }
 .description {
   font-weight: 500;
@@ -117,29 +134,10 @@ a {
   line-height: 120%;
 }
 .start-screen__btn {
-  font-size: 1vw;
-  padding: 1vw 2vw;
-  width: 80%;
-  box-shadow: 0 12px 22px 0 #ee477780;
-  border-bottom: 4px solid #cf1469;
-  background: linear-gradient(90deg, #ff5ba9, #e91776 99.93%);
-  /* background-color: rgb(255, 69, 131); */
-  /* background-color: rgb(255, 192, 203); */
-  /* color: rgb(245, 240, 240); */
-  color: white;
-  border-radius: 0.75vw;
   align-self: flex-end;
-}
-.start-screen__btn:hover {
   padding: 1vw 3vw;
-  /* width: 60%; */
-  box-shadow: none;
-
-  /* background-color: rgba(77, 76, 75, 0.1); */
-  /* color: rgba(0, 0, 0, 0.75); */
-  border-radius: 0.75vw;
-  align-self: flex-end;
 }
+
 .thoughts {
   padding: 3vw 0;
   display: flex;
@@ -176,13 +174,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  border-left: 0.25vw solid #ffecf5;
+  border-left: 0.5vw solid #ffecf5;
 }
 .whom {
   margin: 2vw 0;
   background-color: #ffecf5;
-
-  /* background-color: rgba(250, 158, 168, 0.4); */
   padding: 4vw 12.5vw;
   border-top-right-radius: 3vw;
   border-bottom-left-radius: 3vw;
@@ -199,7 +195,6 @@ a {
   position: relative;
   padding: 1vw 2vw;
   background-color: rgba(245, 240, 240, 0.8);
-  border: 1px solid black;
   border-radius: 0.5vw;
   box-shadow: 0 0 15px 5px #f3cddf;
 }
@@ -210,7 +205,6 @@ a {
   color: #e91776;
   top: -3vw;
   left: -1.5vw;
-  /* text-shadow: 8px 5px rgba(0, 0, 0, 0.4); */
 }
 
 .whom-item__number--done {
@@ -242,13 +236,12 @@ a {
 .health-image {
   bottom: 0;
   right: 0;
-  width: 60%;
+  width: 100%;
   grid-column: 4/5;
   grid-row: 1/3;
-  align-self: center;
   border-radius: 0.5vw;
   align-self: center;
- margin: 0 auto;
+  margin: 0 auto;
 }
 .whom-item__health {
   box-shadow: 0 0 15px 5px pink;
@@ -266,28 +259,19 @@ a {
   margin-bottom: 3vw;
 }
 .work__btn {
-  box-shadow: 0 12px 22px 0 #ee477780;
-  border-bottom: 4px solid #cf1469;
-  background: linear-gradient(90deg, #ff5ba9, #e91776 99.93%);
-  color: white;
-  /* background-color: rgb(245, 240, 240); */
-  padding: 1.5vw 3vw;
-  font-size: 1.5vw;
   align-self: flex-end;
-  border-radius: 1vw;
-  font-weight: 500;
 }
 .questions {
   display: flex;
   flex-direction: column;
   gap: 3vw;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   margin: 4vw 0;
 }
-.questions::-webkit-scrollbar {
+/* .questions::-webkit-scrollbar {
   height: 0;
   width: 0;
-}
+} */
 .questions-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -309,11 +293,15 @@ a {
   flex-direction: column;
   gap: 2vw;
   border-radius: 1vw;
+  align-self: stretch;
+  height: 100%;
+  cursor: grab;
 }
 .question-item h3 {
   font-size: 1vw;
   font-weight: 600;
   width: 100%;
+  font-family: "Bebas-font", sans-serif;
 }
 .question-item .description {
   font-size: 0.75vw;
@@ -324,8 +312,8 @@ a {
   width: 50%;
   text-align: center;
 }
-.after-register img{
-  width: 50%;
+.after-register img {
+  width: 75%;
 }
 
 .online {
@@ -419,11 +407,37 @@ input {
   height: 2vw;
   border: 1px solid black;
 }
-.after-register-btn {
-  padding: 1vw 2vw;
-  width: 60%;
+.question-icon {
+  width: 20%;
 }
-.after-register-btn:hover {
-  padding: 1vw 2vw;
-  width: 60%;
+p a .question-item__email {
+  font-weight: 500;
+  text-decoration: dotted;
+}
+.description--trainer {
+  font-size: 1vw;
+}
+.questions-wrapper {
+  position: relative;
+  width: 120%;
+  margin: 0 -10%;
+  padding: 0 10%;
+}
+.swiper {
+  /* width: 600px;*/
+  height: 500px;
+  /* padding: 2vw; */
+}
+.swiper-button-prev {
+  /* left: -2vw; */
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 2vw;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #cf1469;
+}
+.swiper-pagination-bullet-active {
+  background-color: #cf1469;
 }
