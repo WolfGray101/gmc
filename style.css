@@ -441,3 +441,7 @@ p a .question-item__email {
 .swiper-pagination-bullet-active {
   background-color: #cf1469;
 }
+.description--header {
+  color: #e91776;
+  font-size: 1.5vw;
+}
