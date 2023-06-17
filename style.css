@@ -135,7 +135,7 @@ a {
 }
 .start-screen__btn {
   align-self: flex-end;
-  padding: 1vw 3vw;
+  padding: 1.5vw 5vw;
 }
 
 .thoughts {
@@ -260,6 +260,7 @@ a {
 }
 .work__btn {
   align-self: flex-end;
+  padding: 1.5vw 5vw;
 }
 .questions {
   display: flex;
