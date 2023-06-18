@@ -660,10 +660,10 @@ p a .question-item__email {
     box-shadow: 0 0 15px 5px #f3cddf;
   }
   .whom-item__number {
-    font-size: 1.5rem;
+    font-size:2rem;
     font-weight: 400;
     top: -0.75rem;
-    left: 0.25rem;
+    left: 0rem;
   }
 
   .whom-item__number--done {
@@ -1024,16 +1024,16 @@ p a .question-item__email {
   }
   .whom-item {
     position: relative;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.25rem;
     background-color: rgba(245, 240, 240, 0.8);
     border-radius: 0.5rem;
     box-shadow: 0 0 15px 5px #f3cddf;
   }
   .whom-item__number {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     font-weight: 400;
     top: -0.75rem;
-    left: 0.25rem;
+    left: -1rem;
   }
 
   .whom-item__number--done {
