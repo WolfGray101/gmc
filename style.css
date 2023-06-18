@@ -716,6 +716,10 @@ p a .question-item__email {
     padding: .5rem 2rem;
     font-size: .75rem;
   }
+  .work__btn--follow {
+    padding: .75rem;
+width: 60%;
+  }
   .questions {
     display: flex;
     flex-direction: column;
