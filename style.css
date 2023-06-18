@@ -358,6 +358,9 @@ a {
 label {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 .form-title {
   font-size: 2vw;
@@ -398,16 +401,7 @@ input {
 .loading {
   background-color: #f7bd32;
 }
-.footer {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-.footer-img {
-  width: 20vw;
-  height: auto;
-  align-self: flex-start;
-}
+
 .trainers {
   align-items: flex-start;
 }
@@ -504,16 +498,29 @@ p a .question-item__email {
 .footer {
   position: relative;
 }
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.form-header{
+  display: flex;
+  justify-content: flex-start ;
+  width: 100%;
 
+}
+.footer-img {
+  width: 20vw;
+  height: auto;
+}
 .modal-item {
   position: absolute;
   top: 0;
   left: 25%;
   border-radius: 3vw;
   background-color: white;
-}
-.fb-form {
-  margin-top: 10%;
 }
 .modal-close {
   position: absolute;
@@ -769,8 +776,6 @@ width: 60%;
     height: auto;
     width: 100%;
   }
- 
-  
   .thoughts-hight__questions-description {
     border: 1px solid black;
     border-radius: 3vw;
@@ -867,8 +872,8 @@ width: 60%;
   }
 
   .fb-form {
-    gap: 1vw;
-    width: 70%;
+    gap: 1rem;
+    width: 90%;
     /* margin-top: 6rem; */
   }
   .fb-submit {
