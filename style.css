@@ -36,6 +36,9 @@ body {
   flex-direction: column;
   gap: 3vw;
 }
+html {
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -477,4 +480,57 @@ p a .question-item__email {
   bottom: 0;
   left: .5vw;
   background-color: #fff;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(248, 185, 216, 0.9);
+  z-index: -1;
+  width: 80%;
+  border-radius: 2vw;
+  padding: 4vw;
+  opacity: 0;
+  /* transition-duration: .3s; */
+
+}
+.footer {
+  position: relative;
+}
+
+.modal-item {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  border-radius: 3vw;
+  background-color: white;
+}
+.fb-form {
+  margin-top: 10%;
+}
+.modal-close {
+  position: absolute;
+  right: -4vw;
+  top: -5vw;
+  font-weight: 500;
+  font-size: 4vw;
+  transform: rotate(45deg);
+  padding: 1vw;
+  cursor: pointer;
+  color: #cf1469;
+  transition-duration: .3s;
+
+}
+.modal-close:hover {
+  transition-duration: .3s;
+  text-shadow: 0 0 3px  #e91776;
+  transition-duration: .5s;
+}
+
+.open {
+  z-index: 10;
+  opacity: 1;
+  transition-duration: .3s;
 }
