@@ -274,13 +274,9 @@ a {
   display: flex;
   flex-direction: column;
   gap: 3vw;
-  /* overflow-x: scroll; */
   margin: 4vw 0;
 }
-/* .questions::-webkit-scrollbar {
-  height: 0;
-  width: 0;
-} */
+
 .questions-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -512,7 +508,7 @@ p a .question-item__email {
 
 }
 .footer-img {
-  width: 20vw;
+  width: 15vw;
   height: auto;
 }
 .modal-item {
