@@ -428,9 +428,9 @@
         <div class="form-header">
           <div class="thoughts-hight__questions-item modal-item">
             <p class="description thoughts-hight__questions-description">
-              “После заполнения формы вы получите бесплатный видео-урок “Как лучше
-              начать своё восстановление после родов”. Подарок придёт к вам на
-              почту. ”
+              “После заполнения формы вы получите бесплатный видео-урок “Как
+              лучше начать своё восстановление после родов”. Подарок придёт к
+              вам на почту. ”
             </p>
             <div class="corner-left modal-corner-left"></div>
           </div>
@@ -446,34 +446,21 @@
               data-constraints="@NotEmpty @LettersOnly"
             />
           </label>
-          <p></p>
 
           <label>
-            <input
-              type="text"
-              name="phone"
-              placeholder="Номер телефона"
-            />
+            <input type="text" name="phone" placeholder="Номер телефона" />
           </label>
 
           <label>
-            <input
-              type="text"
-              name="email"
-              placeholder="Ваш email"
-            />
+            <input type="text" name="email" placeholder="Ваш email" />
           </label>
 
           <label>
-            <input
-              type="text"
-              name="city"
-              placeholder="Ваш город"
-            />
+            <input type="text" name="city" placeholder="Ваш город" />
           </label>
 
           <label>
-            (телефон, viber, wa, tg, email) <br>
+            (телефон, viber, wa, tg, email) <br />
 
             <input
               type="text"
@@ -489,79 +476,75 @@
         </form>
       </div>
     </section>
-    
-      <script>
 
+    <script>
+      const applicantForm = document.getElementById("fb-form");
 
-        const applicantForm = document.getElementById("fb-form");
+      let className = "loading";
+      let title = "Отправляем форму";
 
-        let className = "loading";
-        let title = "Отправляем форму";
+      const fnConstructor = (status) => {
+        switch (status) {
+          case "success":
+            className = "success";
+            title =
+              "Заявка отправлена. Мы проконсультируем вас в ближайшее время";
+            closeFn();
 
-        const fnConstructor = (status) => {
-          switch (status) {
-            case "success":
-              className = "success";
-              title =
-                "Заявка отправлена. Мы проконсультируем вас в ближайшее время";
-            closeFn()
+            document.querySelector(".sendInfo").remove();
 
-              document.querySelector(".sendInfo").remove();
+            break;
 
-              break;
+          case "error":
+            className = "error";
+            title =
+              "ошибка отправки. Не закрывайте окно, мы перенаправим вам в тг канал";
+            closeFn();
+            document.querySelector(".sendInfo").remove();
+            break;
 
-            case "error":
-              className = "error";
-              title = "ошибка отправки. Не закрывайте окно, мы перенаправим вам в тг канал";
-            closeFn()
-              document.querySelector(".sendInfo").remove();
-              break;
+          case "loading":
+            className;
+            title;
+            break;
 
-            case "loading":
-              className;
-              title;
-              break;
+          default:
+            return;
+            break;
+        }
 
-            default:
-              return;
-              break;
-          }
+        const formSendInfo = document.createElement("div");
+        formSendInfo.classList.add("sendInfo");
+        formSendInfo.classList.add(className);
+        const formSendTitle = document.createElement("p");
+        formSendTitle.textContent = title;
+        formSendInfo.append(formSendTitle);
+        document.body.append(formSendInfo);
 
-          const formSendInfo = document.createElement("div");
-          formSendInfo.classList.add("sendInfo");
-          formSendInfo.classList.add(className);
-          const formSendTitle = document.createElement("p");
-          formSendTitle.textContent = title;
-          formSendInfo.append(formSendTitle);
-          document.body.append(formSendInfo);
+        if (status !== "loading") {
+          setTimeout(() => {
+            formSendInfo.remove();
+            window.open("https://t.me/unscrupul0us", "_blank");
+          }, 3000);
+        }
+      };
 
-          if (status !== "loading") {
-            setTimeout(() => {
-              formSendInfo.remove();
-              window.open('https://t.me/unscrupul0us', '_blank')
-
-            }, 3000);
-          }
-        };
-
-        applicantForm.onsubmit = async (e) => {
-          e.preventDefault();
-          fnConstructor("loading");
-          try {
-            const res = await fetch("send.php", {
-              method: "POST",
-              body: new FormData(applicantForm),
-            });
-            console.log(res);
-            if (!res.ok) return fnConstructor("error");
-            fnConstructor("success");
-
-          } catch (e) {
-            fnConstructor("error");
-          }
-        };
-      </script>
-      
+      applicantForm.onsubmit = async (e) => {
+        e.preventDefault();
+        fnConstructor("loading");
+        try {
+          const res = await fetch("send.php", {
+            method: "POST",
+            body: new FormData(applicantForm),
+          });
+          console.log(res);
+          if (!res.ok) return fnConstructor("error");
+          fnConstructor("success");
+        } catch (e) {
+          fnConstructor("error");
+        }
+      };
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
@@ -590,31 +573,30 @@
         //отступ слайдеров
         spaceBetween: 5,
         breakpoints: {
-    320: {
-      slidesPerView: 1.25,
-    },
-    567: {
-      slidesPerView: 2,
-    },
-    1100: {
-      slidesPerView: 3,
-    },
-  },
-        
+          320: {
+            slidesPerView: 1.25,
+          },
+          567: {
+            slidesPerView: 2,
+          },
+          1100: {
+            slidesPerView: 3,
+          },
+        },
       });
     </script>
     <script>
-      const openBtn = document.querySelectorAll('#cb')
-      const modal = document.querySelector('.modal')
-      const closeBtn = document.querySelector('.modal-close')
+      const openBtn = document.querySelectorAll("#cb");
+      const modal = document.querySelector(".modal");
+      const closeBtn = document.querySelector(".modal-close");
       const closeFn = () => {
-        console.log('click btn close');
-        return modal.classList.remove('open')
-      }
+        console.log("click btn close");
+        return modal.classList.remove("open");
+      };
       for (let btn of openBtn) {
-        btn.addEventListener('click', () => modal.classList.add('open'))
+        btn.addEventListener("click", () => modal.classList.add("open"));
       }
-      closeBtn.addEventListener('click', ()=> closeFn())
+      closeBtn.addEventListener("click", () => closeFn());
     </script>
   </body>
 </html>
