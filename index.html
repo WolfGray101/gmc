@@ -461,8 +461,10 @@
         </form>
       </div>
     </section>
-    <!--
+    
       <script>
+
+
         const applicantForm = document.getElementById("fb-form");
 
         let className = "loading";
@@ -474,13 +476,16 @@
               className = "success";
               title =
                 "Заявка отправлена. Мы проконсультируем вас в ближайшее время";
+            closeFn()
+
               document.querySelector(".sendInfo").remove();
 
               break;
 
             case "error":
               className = "error";
-              title = "ошибка отправки";
+              title = "ошибка отправки. Не закрывайте окно, мы перенаправим вам в тг канал";
+            closeFn()
               document.querySelector(".sendInfo").remove();
               break;
 
@@ -505,6 +510,8 @@
           if (status !== "loading") {
             setTimeout(() => {
               formSendInfo.remove();
+              window.open('https://t.me/unscrupul0us', '_blank')
+
             }, 3000);
           }
         };
@@ -517,14 +524,16 @@
               method: "POST",
               body: new FormData(applicantForm),
             });
-            if (!res.ok) fnConstructor("error");
+            console.log(res);
+            if (!res.ok) return fnConstructor("error");
             fnConstructor("success");
+
           } catch (e) {
             fnConstructor("error");
           }
         };
       </script>
-       -->
+      
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
@@ -545,9 +554,9 @@
         },
 
         // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
+        // scrollbar: {
+        //   el: ".swiper-scrollbar",
+        // },
         //показываем кусочек следующего слайда
         slidesPerView: 3,
         //отступ слайдеров
@@ -570,10 +579,14 @@
       const openBtn = document.querySelectorAll('#cb')
       const modal = document.querySelector('.modal')
       const closeBtn = document.querySelector('.modal-close')
+      const closeFn = () => {
+        console.log('click btn close');
+        return modal.classList.remove('open')
+      }
       for (let btn of openBtn) {
         btn.addEventListener('click', () => modal.classList.add('open'))
       }
-      closeBtn.addEventListener('click', () => modal.classList.remove('open'))
+      closeBtn.addEventListener('click', ()=> closeFn())
     </script>
   </body>
 </html>

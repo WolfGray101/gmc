@@ -385,12 +385,15 @@ input {
   transform: translate(-50%, -50%);
   color: white;
   font-weight: 500;
+  z-index: 100;
 }
 .success {
   background-color: green;
 }
 .error {
+  font-size: 1.5rem;
   background-color: red;
+  padding: 2rem 4rem;
 }
 .loading {
   background-color: #f7bd32;
