@@ -487,7 +487,7 @@ p a .question-item__email {
   z-index: -1;
   width: 80%;
   border-radius: 2vw;
-  padding: 4vw;
+  padding: 4vw 4vw 2vw;
   opacity: 0;
   transition-duration: 0.5s;
 }
@@ -839,7 +839,7 @@ p a .question-item__email {
   .footer {
     position: relative;
     width: 100%;
-    padding: 6rem 0;
+    padding: 6rem 0 0;
   }
   .modal-item {
     position: absolute;
@@ -1207,7 +1207,7 @@ p a .question-item__email {
   .footer {
     position: relative;
     width: 100%;
-    padding: 6rem 0;
+    padding: 6rem 0 0;
   }
   .modal-item {
     position: absolute;
