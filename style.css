@@ -404,7 +404,9 @@ input {
   justify-content: space-around;
 }
 .footer-img {
-  width: 25%;
+  width: 20vw;
+  height: auto;
+  align-self: flex-start;
 }
 .trainers {
   align-items: flex-start;
@@ -883,11 +885,12 @@ p a .question-item__email {
     box-shadow: 0 0 10px 2px #f8b9d8;
     border-radius: 0.5rem;
     width: 100%;
-    padding: 0.75vw 0;
+    padding: 0.75vw 1rem;
+    height: 2.5rem;
   }
   ::placeholder {
     padding: 0.5rem 1rem;
-    height: 2vw;
+    height: 1.5rem;
   }
   .sendInfo {
     font-size: 1.5rem;
