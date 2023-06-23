@@ -122,6 +122,11 @@ a {
   border-top-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
 }
+.start-screen__image-container video {
+  width: 100%;
+  border-top-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+}
 .start-screen__info-block {
   display: flex;
   flex-direction: column;
@@ -401,6 +406,10 @@ input {
 .trainers {
   align-items: flex-start;
 }
+
+#trainers .header-h1 {
+  text-align: center;
+}
 .thoughts-hight__questions-description {
   border: 1px solid black;
   border-radius: 3vw;
@@ -590,6 +599,11 @@ p a .question-item__email {
     text-align: center;
   }
   .start-screen__image-container img {
+    width: 80%;
+    border-top-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+  }
+  .start-screen__image-container video {
     width: 80%;
     border-top-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
@@ -960,6 +974,11 @@ p a .question-item__email {
     text-align: center;
   }
   .start-screen__image-container img {
+    width: 80%;
+    border-top-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+  }
+  .start-screen__image-container video {
     width: 80%;
     border-top-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
