@@ -430,6 +430,60 @@
       <div class="swiper-button-next"></div>
     </section>
 
+    <footer class="whom">
+      <div class="footer">
+        <div class="form-header">
+          <div class="thoughts-hight__questions-item modal-item">
+            <p class="description thoughts-hight__questions-description">
+              “После заполнения формы вы получите бесплатный видео-урок “Как
+              лучше начать своё восстановление после родов”. Подарок придёт к
+              вам на почту. ”
+            </p>
+            <div class="corner-left modal-corner-left"></div>
+          </div>
+          <img src="./src/gift.png" alt="" class="footer-img" />
+        </div>
+        <form id="fb-form" class="rd-mailform fb-form">
+          <!-- <p class="form-title"></p> -->
+          <label>
+            <input
+              placeholder="Ваше имя"
+              type="text"
+              name="name"
+              data-constraints="@NotEmpty @LettersOnly"
+            />
+          </label>
+
+          <label>
+            <input type="text" name="phone" placeholder="Номер телефона" />
+          </label>
+
+          <label>
+            <input type="text" name="email" placeholder="Ваш email" />
+          </label>
+
+          <label>
+            <input type="text" name="city" placeholder="Ваш город" />
+          </label>
+
+          <label>
+            (телефон, viber, whatsapp, telegram, email) <br />
+
+            <input
+              type="text"
+              name="feedback"
+              placeholder="Как с вами связаться?"
+              data-constraints="@NotEmpty @NumbersOnly"
+            />
+          </label>
+
+          <button class="fb-submit btn work__btn" type="submit">
+            Отправить
+          </button>
+        </form>
+      </div>
+    </footer>
+
     <section class="modal">
       <div class="footer">
         <div class="modal-close">+</div>
