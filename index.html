@@ -540,7 +540,7 @@
     </section>
 
     <script>
-      const applicantForm = document.getElementById("fb-form");
+      const applicantForm = document.querySelectorAll("#fb-form");
 
       let className = "loading";
       let title = "Отправляем форму";
@@ -592,7 +592,8 @@
         }
       };
 
-      applicantForm.onsubmit = async (e) => {
+for (let el of applicantForm) {
+      el.onsubmit = async (e) => {
         e.preventDefault();
         fnConstructor("loading");
         try {
@@ -606,7 +607,8 @@
         } catch (e) {
           fnConstructor("error");
         }
-      };
+      }
+    };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
