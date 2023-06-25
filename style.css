@@ -81,8 +81,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.logo {
-}
 .logo img {
   width: 8vw;
 }
@@ -989,7 +987,7 @@ p a .question-item__email {
   .footer-link {
     font-size: 0.75rem;
   }
- 
+
   .support-item img {
     width: 2rem;
   }
@@ -999,7 +997,7 @@ p a .question-item__email {
   }
 
   .modal-description {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }
 @media screen and (min-width: 568px) and (max-width: 920px) {
@@ -1305,7 +1303,7 @@ p a .question-item__email {
     padding: 3rem 0 0;
   }
   .modal-description {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
   .modal-item {
     position: absolute;
@@ -1393,7 +1391,7 @@ p a .question-item__email {
   .footer-link {
     font-size: 0.75rem;
   }
- 
+
   .support-item img {
     width: 2rem;
   }
