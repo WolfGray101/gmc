@@ -26,7 +26,7 @@
     <section class="start-screen" id="start">
       <div class="start-screen__image-container">
         <video autoplay loop muted playsinline>
-          <source src="./src/0620.mp4" type="video/mp4">
+          <source src="./src/0620.mp4" type="video/mp4" />
         </video>
         <!-- <img src="./src/startscreenimg.jpeg" alt="" /> -->
       </div>
@@ -110,7 +110,7 @@
           <p class="description">
             Если у тебя пострадала кожа и состояние мышц
           </p>
-        </div>   
+        </div>
         <div class="whom-item">
           <p class="whom-item__number">4</p>
           <p class="description">
@@ -434,7 +434,28 @@
 
     <footer class="whom">
       <div class="footer">
-        <div class="form-header">
+        <div class="footer-items">
+          <a class="footer-link" target="_blank"
+          href="https://docs.google.com/document/d/1NIXdOJcTpWC-t8dhCr2D1BNQ9GktxVplK4g-PzSJTME/edit?usp=sharing"
+        >
+      Публичная оферта</a>
+      <div class="footer-support">
+            <p class="description">Поддержка:</p>
+            <a href="mailto:">Email</a>
+            <div class="support-items">
+              <a href="https://www.instagram.com/mgc_ru/" class="support-item">INST</a>
+              <a href="https://t.me/polinasimakova" class="support-item">TG</a>
+            </div>
+          </div>
+          <a class="footer-link" target="_blank"
+          href="https://docs.google.com/document/d/1QcHU64yeSq-g2VRmsQfFU3sqpNwP321rpXMgoVE1SMg/edit?usp=sharing"
+        >
+    
+      Политика конфиденциальности</a>
+        </div>
+       
+    
+        <!-- <div class="form-header">
           <div class="thoughts-hight__questions-item modal-item">
             <p class="description thoughts-hight__questions-description">
               “После заполнения формы вы получите бесплатный видео-урок “Как
@@ -444,9 +465,8 @@
             <div class="corner-left modal-corner-left"></div>
           </div>
           <img src="./src/gift.png" alt="" class="footer-img" />
-        </div>
-        <form id="fb-form" class="rd-mailform fb-form">
-          <!-- <p class="form-title"></p> -->
+        </div> -->
+        <!-- <form id="fb-form" class="rd-mailform fb-form">
           <label>
             <input
               placeholder="Ваше имя"
@@ -482,7 +502,7 @@
           <button class="fb-submit btn work__btn" type="submit">
             Отправить
           </button>
-        </form>
+        </form> -->
       </div>
     </footer>
 
@@ -588,29 +608,29 @@
         if (status !== "loading") {
           setTimeout(() => {
             formSendInfo.remove();
-            window.location.href="https://t.me/unscrupul0us"
+            window.location.href = "https://t.me/unscrupul0us";
             // window.open("https://t.me/unscrupul0us", "_blank");
           }, 3000);
         }
       };
 
-for (let el of applicantForm) {
-      el.onsubmit = async (e) => {
-        e.preventDefault();
-        fnConstructor("loading");
-        try {
-          const res = await fetch("send.php", {
-            method: "POST",
-            body: new FormData(applicantForm),
-          });
-          console.log(res);
-          if (!res.ok) return fnConstructor("error");
-          fnConstructor("success");
-        } catch (e) {
-          fnConstructor("error");
-        }
+      for (let el of applicantForm) {
+        el.onsubmit = async (e) => {
+          e.preventDefault();
+          fnConstructor("loading");
+          try {
+            const res = await fetch("send.php", {
+              method: "POST",
+              body: new FormData(applicantForm),
+            });
+            console.log(res);
+            if (!res.ok) return fnConstructor("error");
+            fnConstructor("success");
+          } catch (e) {
+            fnConstructor("error");
+          }
+        };
       }
-    };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

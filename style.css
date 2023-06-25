@@ -550,6 +550,35 @@ p a .question-item__email {
   transition-duration: 0.5s;
 }
 
+.footer-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.footer-support {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+.description {
+}
+.support-items {
+  display: flex;
+  gap: 1.5vw;
+}
+.support-item {
+}
+
+.footer-link {
+  transition-duration: .3s;
+  border-bottom: 1px solid;
+}
+.footer-link:hover {
+  transform: scale(1.05);
+  transition-duration: .3s;
+  font-weight: 500;
+}
 @media screen and (min-width: 320px) and (max-width: 567px) {
   body {
     padding: 1rem 1rem 3rem;
