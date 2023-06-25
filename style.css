@@ -187,7 +187,7 @@ a {
   border-left: 0.5vw solid #ffecf5;
 }
 .whom {
-  margin: 2vw 0;
+  /* margin: 2vw 0; */
   background-color: #ffecf5;
   padding: 4vw 12.5vw;
   border-top-right-radius: 3vw;
@@ -272,8 +272,8 @@ a {
   justify-content: center;
 }
 .work__btn {
-  align-self: flex-end;
-  padding: 1.5vw 5vw;
+  align-self: center;
+  padding: 1.5vw 8vw;
 }
 .questions {
   display: flex;
@@ -502,8 +502,14 @@ p a .question-item__email {
 }
 .footer {
   position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
-.footer {
+.modal-container {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -515,9 +521,9 @@ p a .question-item__email {
   justify-content: flex-start;
   width: 100%;
 }
-.footer-img {
+.modal-gift-img {
   width: 15vw;
-  height: auto;
+  /* height: auto; */
 }
 .modal-item {
   position: absolute;
@@ -559,25 +565,37 @@ p a .question-item__email {
 .footer-support {
   display: flex;
   flex-direction: column;
-  gap: 1.5vw;
+  gap: 0.5vw;
 }
-.description {
-}
+
 .support-items {
   display: flex;
-  gap: 1.5vw;
+  gap: 1vw;
+  justify-content: center;
 }
 .support-item {
+  transition-duration: 0.3s;
+}
+.support-item:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  font-weight: 500;
 }
 
 .footer-link {
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   border-bottom: 1px solid;
 }
 .footer-link:hover {
   transform: scale(1.05);
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   font-weight: 500;
+}
+.support-item img {
+  width: 2vw;
+}
+.whom-footer {
+  padding: 1vw 12.5vw;
 }
 @media screen and (min-width: 320px) and (max-width: 567px) {
   body {
@@ -703,7 +721,7 @@ p a .question-item__email {
     box-shadow: 0 0 15px 5px #f3cddf;
   }
   .whom-item__number {
-    font-size:2rem;
+    font-size: 2rem;
     font-weight: 400;
     top: -0.75rem;
     left: 0rem;
@@ -756,8 +774,8 @@ p a .question-item__email {
     justify-content: center;
   }
   .work__btn {
-    align-self: flex-end;
-    padding: 0.5rem 2rem;
+    align-self: center;
+    padding: 0.5rem 4rem;
     font-size: 0.75rem;
   }
   .work__btn--follow {
@@ -880,9 +898,10 @@ p a .question-item__email {
     padding: 4vw;
   }
   .footer {
-    position: relative;
-    width: 100%;
-    padding: 6rem 0 0;
+    padding: 1rem;
+  }
+  .modal-container {
+    padding: 5rem 0 0;
   }
   .modal-item {
     position: absolute;
@@ -948,9 +967,39 @@ p a .question-item__email {
     color: white;
     font-weight: 500;
   }
-  .footer-img {
+  .modal-gift-img {
     width: 25%;
     align-self: flex-start;
+  }
+
+  .footer-items {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-support {
+    flex-direction: column;
+    gap: 0.5rem;
+    order: -1;
+  }
+
+  .support-items {
+    gap: 1rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+  }
+ 
+  .support-item img {
+    width: 2rem;
+  }
+  .whom-footer {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .modal-description {
+    font-size: .75rem;
   }
 }
 @media screen and (min-width: 568px) and (max-width: 920px) {
@@ -1130,8 +1179,8 @@ p a .question-item__email {
     justify-content: center;
   }
   .work__btn {
-    align-self: flex-end;
-    padding: 0.75rem 2rem;
+    align-self: center;
+    padding: 0.75rem 4rem;
     font-size: 1rem;
   }
   .work__btn--follow {
@@ -1252,10 +1301,11 @@ p a .question-item__email {
     border-radius: 2vw;
     padding: 4vw;
   }
-  .footer {
-    position: relative;
-    width: 100%;
-    padding: 6rem 0 0;
+  .modal-container {
+    padding: 3rem 0 0;
+  }
+  .modal-description {
+    font-size: .75rem;
   }
   .modal-item {
     position: absolute;
@@ -1281,6 +1331,7 @@ p a .question-item__email {
   }
 
   .fb-form {
+    margin-top: 1rem;
     gap: 1rem;
     width: 90%;
     /* margin-top: 6rem; */
@@ -1321,8 +1372,33 @@ p a .question-item__email {
     color: white;
     font-weight: 500;
   }
-  .footer-img {
+  .modal-gift-img {
     width: 25%;
     align-self: flex-start;
+  }
+  .footer-items {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-support {
+    flex-direction: column;
+    gap: 0.5rem;
+    order: -1;
+  }
+
+  .support-items {
+    gap: 1rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+  }
+ 
+  .support-item img {
+    width: 2rem;
+  }
+  .whom-footer {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
   }
 }
