@@ -39,9 +39,9 @@
           свою дородовую форму с помощью наших онлайн-тренировок в удобное для
           вас время
         </p>
-        <a href="#how">
+        
           <button class="btn start-screen__btn" id="cb">Оставить заявку</button>
-        </a>
+        
       </div>
     </section>
     <section class="thoughts" id="thoughts">
@@ -515,7 +515,7 @@
               data-constraints="@NotEmpty @NumbersOnly"
             />
           </label>
-
+          <p class="warning-message">Все поля должны быть заполнены!</p>
           <button class="fb-submit btn work__btn" type="submit">
             Отправить
           </button>
@@ -524,7 +524,61 @@
     </section>
 
     <script>
-      const applicantForm = document.querySelectorAll("#fb-form");
+      const applicantForm = document.getElementById("fb-form");
+      const fbSubmit = document.querySelector(".fb-submit");
+      const warning = document.querySelector(".warning-message");
+
+      function validateForm(data) {
+        let errorElements = [];
+        for (let el of data) {
+          if (!el.value) {
+            const errorElement = document.querySelector(
+              `input[name='${el.name}']`
+            );
+            errorElements.push(el);
+            errorElement.classList.add("warning");
+          }
+        }
+        errorElements.length !== 0
+          ? (warning.classList.add("warning-message--visible"),
+            applicantForm.addEventListener("input", (e) => {
+              const el = e.target;
+              !el.value
+                ? el.classList.add("warning")
+                : el.classList.remove("warning");
+            }))
+          : fullFormData();
+      }
+
+      async function fullFormData() {
+        fnConstructor("loading");
+
+        try {
+          const res = await fetch("send.php", {
+            method: "POST",
+            body: new FormData(applicantForm),
+          });
+          console.log(res);
+          if (!res.ok) return fnConstructor("error");
+          fnConstructor("success");
+          setTimeout(() => {
+            window.location.href = "https://t.me/polinasimakova";
+          }, 3000);
+        } catch (e) {
+          fnConstructor("error");
+        }
+      }
+
+      function serializeForm(formNode) {
+        const { elements } = formNode;
+        const data = Array.from(elements)
+          .filter((item) => !!item.name)
+          .map((element) => {
+            const { name, value } = element;
+            return { name, value };
+          });
+        validateForm(data);
+      }
 
       let className = "loading";
       let title = "Отправляем форму";
@@ -533,20 +587,30 @@
         switch (status) {
           case "success":
             className = "success";
-            title =
-              "Заявка отправлена. Мы проконсультируем вас в ближайшее время";
+            title = `Заявка отправлена. Не закрывайте окно, мы перенаправим
+                                Вас в наш telegram-канал, там вы получите приветственный подарок`;
             closeFn();
 
             document.querySelector(".sendInfo").remove();
+
+            warning.classList.remove("warning-message--visible");
+
+            errorElement = [];
+
+            applicantForm.reset();
 
             break;
 
           case "error":
             className = "error";
-            title =
-              "ошибка отправки. Не закрывайте окно, мы перенаправим вам в тг канал";
+            title = "Ошибка отправки. Попробуйте, пожалуйста, еще раз";
             closeFn();
             document.querySelector(".sendInfo").remove();
+            warning.classList.remove("warning-message--visible");
+
+            errorElement = [];
+
+            applicantForm.reset();
             break;
 
           case "loading":
@@ -570,29 +634,14 @@
         if (status !== "loading") {
           setTimeout(() => {
             formSendInfo.remove();
-            window.location.href = "https://t.me/unscrupul0us";
-            // window.open("https://t.me/unscrupul0us", "_blank");
           }, 3000);
         }
       };
 
-      for (let el of applicantForm) {
-        el.onsubmit = async (e) => {
-          e.preventDefault();
-          fnConstructor("loading");
-          try {
-            const res = await fetch("send.php", {
-              method: "POST",
-              body: new FormData(applicantForm),
-            });
-            console.log(res);
-            if (!res.ok) return fnConstructor("error");
-            fnConstructor("success");
-          } catch (e) {
-            fnConstructor("error");
-          }
-        };
-      }
+      applicantForm.onsubmit = (e) => {
+        e.preventDefault();
+        serializeForm(applicantForm);
+      };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -639,7 +688,7 @@
       const modal = document.querySelector(".modal");
       const closeBtn = document.querySelector(".modal-close");
       const closeFn = () => {
-        console.log("click btn close");
+        applicantForm.reset();
         return modal.classList.remove("open");
       };
       for (let btn of openBtn) {

@@ -28,6 +28,23 @@
   /* font-family: "Bebas-font", sans-serif; */
   /* font-family: "Inter", sans-serif; */
 }
+:disabled {
+  background: rgb(0, 0, 0, 0.4) !important;
+}
+.warning {
+  border: #f73232 2px  solid;
+}
+.warning-message{
+  visibility: hidden;
+
+}
+.warning-message--visible {
+  visibility: visible;
+  transition-duration: 1s;
+  font-size: 2rem;
+  color: #f73232;
+  font-weight: 500;
+}
 body {
   padding: 2vw 15vw;
   z-index: 0;
@@ -371,7 +388,7 @@ input {
   box-shadow: 0 0 10px 2px #f8b9d8;
   border-radius: 0.5rem;
   width: 100%;
-  padding: 0.75vw 0;
+  padding: 0.75vw 1.5vw;
 }
 ::placeholder {
   padding: 0.75vw 2vw;
