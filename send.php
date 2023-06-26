@@ -1,7 +1,7 @@
 <?php header('Content-Type: text/html; charset=utf-8');
 
 if(isset($_POST['name']) && !empty($_POST['name'])) {
-$to = '5565486@mail.ru';
+$to = 'simakovapolina96@gmail.com';
 $subject = 'Сообщение с сайта '.$_SERVER['SERVER_NAME'];
 $charset = "utf-8";
 $headerss ="Content-type: text/html; charset=$charset\r\n";
